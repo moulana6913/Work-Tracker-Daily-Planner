@@ -22,8 +22,7 @@ body{
 }
 
 header,footer{
-  background:linear-gradient(135deg,#063b2b,#08734f,#075b91,#063b2b);
-  background-size:300% 300%;
+  background:linear-gradient(135deg,#063b2b,#08734f,#075b91);
   color:white;
   text-align:center;
 }
@@ -209,8 +208,7 @@ input[type=date],input[type=month],input[type=week]{
 
 .bar{
   height:100%;
-  background:linear-gradient(135deg,#063b2b,#08734f,#075b91,#063b2b);
-  background-size:300% 300%;
+  background:linear-gradient(135deg,#00D936,#FF6600,#003BFF);
 }
 
 .legend{
@@ -448,114 +446,51 @@ footer strong{font-size:17px;letter-spacing:1px}
   .hint,.footer{display:none!important}
 }
 
-/* ICON COLOUR THEME + SPLASH SCREEN */
 @keyframes trackerGradient{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
-header,footer{
-  background:linear-gradient(135deg,#063b2b,#08734f,#075b91);
-}
-.main{
-  border:1px solid #d9b45b;
-  box-shadow:0 4px 14px #0003;
-}
+header,footer{background:linear-gradient(135deg,#063b2b,#08734f,#075b91)}
 .daily-btn{background:linear-gradient(135deg,#08734f,#063b2b)}
 .weekly-btn{background:linear-gradient(135deg,#075b91,#08734f)}
 .monthly-btn{background:linear-gradient(135deg,#08734f,#075b91)}
-.actions button{
-  background:linear-gradient(135deg,#08734f,#075b91);
-}
-.actions .full{
-  background:linear-gradient(135deg,#063b2b,#075b91);
-}
-.bar{
-  background:linear-gradient(90deg,#08734f,#075b91,#d9b45b);
-}
+.actions button{background:linear-gradient(135deg,#08734f,#075b91)}
+.actions .full{background:linear-gradient(135deg,#063b2b,#075b91)}
+.bar{background:linear-gradient(90deg,#08734f,#075b91,#d9b45b)}
 #splash{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
+  position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;color:white;
   background:linear-gradient(135deg,#063b2b,#08734f,#075b91,#063b2b);
-  background-size:300% 300%;
-  animation:trackerGradient 7s ease infinite;
+  background-size:300% 300%;animation:trackerGradient 7s ease infinite;
   transition:opacity .8s ease,visibility .8s ease;
 }
-#splash.hide{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-.splash-mosque{
-  font-size:clamp(75px,18vw,110px);
-  line-height:1.2;
-  filter:drop-shadow(0 0 16px #d9b45b);
-  animation:splashFloat 2.2s ease-in-out infinite;
-}
-@keyframes splashFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-}
-.splash-title{
-  margin-top:18px;
-  color:#fff;
-  font-size:clamp(25px,7vw,34px);
-  font-weight:800;
-  letter-spacing:2px;
-  text-shadow:0 2px 14px #d9b45b88;
-}
-.splash-subtitle{
-  margin-top:10px;
-  color:#ffe5a3;
-  font-size:13px;
-  letter-spacing:2px;
-}
-.splash-line{
-  width:155px;
-  height:5px;
-  margin-top:34px;
-  overflow:hidden;
-  border-radius:20px;
-  background:#ffffff35;
-}
-.splash-line span{
-  display:block;
-  width:0;
-  height:100%;
-  border-radius:20px;
-  background:linear-gradient(90deg,#d9b45b,#fff0b8);
-  animation:splashLoad 2.8s ease forwards;
-}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+.splash-mosque{font-size:clamp(75px,18vw,110px);line-height:1.2;
+  filter:drop-shadow(0 0 16px #d9b45b);animation:splashFloat 2.2s ease-in-out infinite}
+@keyframes splashFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.splash-title{margin-top:18px;color:#fff;font-size:clamp(25px,7vw,34px);
+  font-weight:800;letter-spacing:2px;text-shadow:0 2px 14px #d9b45b88}
+.splash-subtitle{margin-top:10px;color:#ffe5a3;font-size:13px;letter-spacing:2px}
+.splash-line{width:155px;height:5px;margin-top:34px;overflow:hidden;border-radius:20px;background:#ffffff35}
+.splash-line span{display:block;width:0;height:100%;border-radius:20px;
+  background:linear-gradient(90deg,#d9b45b,#fff0b8);animation:splashLoad 2.8s ease forwards}
 @keyframes splashLoad{to{width:100%}}
-.splash-caption{
-  margin-top:14px;
-  color:#ffffffc9;
-  font-size:11px;
-  letter-spacing:1px;
-}
+.splash-caption{margin-top:14px;color:#ffffffc9;font-size:11px;letter-spacing:1px}
 
 </style>
 </head>
 
 <body>
 
-
-<!-- ================= SPLASH SCREEN ================= -->
-<div id="splash" aria-label="WORK TRACKER loading screen">
+<!-- SPLASH SCREEN -->
+<div id="splash">
   <div class="splash-mosque">🕌</div>
   <div class="splash-title">WORK TRACKER</div>
   <div class="splash-subtitle">DAILY • WEEKLY • MONTHLY</div>
   <div class="splash-line"><span></span></div>
   <div class="splash-caption">ஒவ்வொரு நாளும் சிறப்பாக செயல்படுவோம்!</div>
 </div>
-
 
 
 <header>
@@ -887,7 +822,6 @@ header,footer{
 
 <script>
 
-/* ================= SPLASH SCREEN ================= */
 window.addEventListener("load",()=>{
   const splash=document.getElementById("splash");
   if(!splash)return;
@@ -896,7 +830,6 @@ window.addEventListener("load",()=>{
     setTimeout(()=>splash.remove(),850);
   },2800);
 });
-
 
 
 /* ================= TASK LISTS ================= */
@@ -1078,11 +1011,40 @@ function createHeaders(panel){
 
   header.innerHTML="<th>தேதி</th>";
 
+  /* PDF கோப்புகள் HTML இருக்கும் அதே folder-ல் இருக்க வேண்டும் */
+  const pdfFiles={
+    "வாகியா|துஆ":"waqiya-dua.pdf",
+    "سورة السجدة":"surah-sajdah.pdf",
+    "سورة الكهف":"surah-kahf.pdf",
+    "صلواة-80":"salawat.pdf",
+    "திக்ர்|ஃபாத்திமா-100":"dhikr-fatima-100.pdf",
+    "திக்ர்|ஸலவாத்-100":"dhikr-salawat-100.pdf",
+    "திக்ர்|கலிமா-100":"dhikr-kalima-100.pdf",
+    "திக்ர்|இஸ்திக்பார்-100":"dhikr-istighfar-100.pdf"
+  };
+
   tasks[taskset].forEach(task=>{
     const parts=task.split("|");
     const th=document.createElement("th");
+    const pdfName=pdfFiles[task];
 
-    th.textContent=parts.join(" ");
+    if(pdfName){
+      const link=document.createElement("a");
+      link.href=pdfName;
+      link.target="_blank";
+      link.rel="noopener";
+      link.textContent=parts.join(" ");
+      link.title="PDF திறக்க தொடவும்";
+      link.style.color="#8dd8c2";
+      link.style.textDecoration="none";
+      link.style.fontWeight="bold";
+      link.style.display="inline-block";
+      link.style.padding="3px";
+      th.appendChild(link);
+    }else{
+      th.textContent=parts.join(" ");
+    }
+
     header.appendChild(th);
   });
 }
