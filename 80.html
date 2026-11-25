@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Touch Counter</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#008000;
+  color:white;
+  text-align:center;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.container{
+  width:90%;
+  max-width:400px;
+}
+h2{
+  font-size:25px;
+}
+#count{
+  font-size:100px;
+  font-weight:bold;
+  margin:40px 0;
+}
+.touch{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:none;
+  background:#d9b45b;
+  color:#008000;
+  font-size:28px;
+  font-weight:bold;
+  box-shadow:0 8px 20px #001e16;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.touch:active{
+  transform:scale(.94);
+}
+.reset{
+  display:block;
+  margin:35px auto;
+  padding:13px 35px;
+  border:none;
+  border-radius:10px;
+  background:white;
+  color:#063b2b;
+  font-size:17px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Touch Counter</h2>
+
+<div id="count">0</div>
+
+<button class="touch" onclick="increase()">
+  TOUCH
+</button>
+
+<button class="reset" onclick="resetCount()">
+  RESET ↻
+</button>
+
+</div>
+
+<script>
+let number = 0;
+
+function increase(){
+  if(number < 80){
+    number++;
+    document.getElementById("count").innerText = number;
+
+    if(number === 80){
+      let bell = new Audio(
+        "https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+      );
+      bell.play();
+    }
+  }
+}
+
+function resetCount(){
+  number = 0;
+  document.getElementById("count").innerText = number;
+}
+</script>
+
+</body>
+</html>
+<!--
+function increase(){
+  number++;
+  document.getElementById("count").innerText = number;
+}
+function increase() {
+  if (number < 100) {
+    number++;
+    document.getElementById("count").innerText = number;
+  }
+}
