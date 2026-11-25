@@ -84,10 +84,17 @@ h2{
 <script>
 let number = 0;
 
-function increase() {
-  if (number < 100) {
+function increase(){
+  if(number < 100){
     number++;
     document.getElementById("count").innerText = number;
+
+    if(number === 100){
+      let bell = new Audio(
+        "https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+      );
+      bell.play();
+    }
   }
 }
 
@@ -103,4 +110,10 @@ function resetCount(){
 function increase(){
   number++;
   document.getElementById("count").innerText = number;
+}
+function increase() {
+  if (number < 100) {
+    number++;
+    document.getElementById("count").innerText = number;
+  }
 }
